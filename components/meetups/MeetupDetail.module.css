@@ -1,0 +1,8 @@
+.detail {
+  text-align: center;
+}
+
+/* This only does something to the any images inside the .detail <section></section>! */
+.detail img {
+  width: 100%;
+}
