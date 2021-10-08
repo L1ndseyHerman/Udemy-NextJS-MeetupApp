@@ -19,8 +19,20 @@ const DUMMY_MEETUPS = [
 ];
 
 //  Could this be an ES6 function, maybe?
-function HomePage() {
-  return <MeetupList meetups={DUMMY_MEETUPS} />;
+function HomePage(props) {
+  return <MeetupList meetups={props.meetups} />;
+}
+
+//  A special pre-coded function for Static Generation.
+//  Waits to load the webpage until the data fetches somehow bec this function is async, idk.
+//  Something abt the code in here won't show up for search engine optimization? I'm confused.
+export async function getStaticProps() {
+  //  fetch data from an API/database
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
+  };
 }
 
 export default HomePage;
