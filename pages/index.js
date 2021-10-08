@@ -23,6 +23,20 @@ function HomePage(props) {
   return <MeetupList meetups={props.meetups} />;
 }
 
+//  This will always run on the server after deployment.
+//  Good for wesites where you have data that just updates all day long every second.
+//  This will always get the current data.
+/*export async function getServerSideProps(context) {
+  const req = context.req;
+  const res = context.res;
+  //  fetch data from an API/database
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
+  };
+}*/
+
 //  A special pre-coded function for Static Generation.
 //  Waits to load the webpage until the data fetches somehow bec this function is async, idk.
 //  Something abt the code in here won't show up for search engine optimization? I'm confused.
