@@ -32,6 +32,10 @@ export async function getStaticProps() {
     props: {
       meetups: DUMMY_MEETUPS,
     },
+    //  The number of seconds React JS will wait before it regenerates the page,
+    //  so will check the database/API once every 10 seconds to see if the data updated,
+    //  and if it did, show it on the webpage.
+    revalidate: 1,
   };
 }
 
