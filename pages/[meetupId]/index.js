@@ -39,7 +39,8 @@ export async function getStaticPaths() {
   return {
     //  Having a fallback of "false" means any meetupId besides "m1" or "m2" would return the 404 page.
     //  "true" would try to create/add the page somehow, I'm confused.
-    fallback: false,
+    //  Blocking is like true, but it waits to render until the data loads from MongoDB.
+    fallback: "blocking",
     //  "paths" is a pre-coded property:
     //  Need 1 object per version of a dynamic page.
     //  New! This is being generated dynamically based on the MongoDB data.
